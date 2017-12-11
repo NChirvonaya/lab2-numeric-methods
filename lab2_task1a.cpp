@@ -41,7 +41,6 @@ double dg_dy(double x, double y)
 }
 int main()
 {
- // freopen("out1a.plot", "w", stdout);
   cout << "f(x, y) = x^2 - 2y^2 - xy + 2x - y + 1\n";
   cout << "g(x, y) = 2x^2 - y^2 - yx + 3y - 5\n";
 
