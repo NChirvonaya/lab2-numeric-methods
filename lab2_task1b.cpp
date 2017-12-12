@@ -29,8 +29,6 @@ double p(double x)
 int main()
 {
 
-  freopen("out1.plot", "w", stdout);
-
   int n;
   cin >> n;
   double l, r;

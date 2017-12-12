@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <cmath>
 #include <algorithm>
@@ -20,10 +22,11 @@ double phi(double x)
 
 int main()
 {
-
+  freopen("out7.plot", "w", stdout);
+/*
   cout << "y(x) = x^3 - 0.2x^2 - 0.2x - 1.2\n" << "y(x) = 0\n";
 
-  cout << "Chord method: \n";
+  cout << "Chord method: \n";*/
   double a(1), b(1.5);
   double q(0.170849);
   double x0(a);
@@ -31,22 +34,23 @@ int main()
   while (fabs(x - x0) > eps) {
     x0 = x;
     x = x0 - f(x0) / (f(b) - f(x0))* (b - x0);
-  }
+  }/*
   cout << "x0 = " << x << "\n";
   cout << "y(x0) = " << fixed << setprecision(5) << f(x) << "\n";
 
 
-  cout << "Simple iterations method: \n";
+  cout << "Simple iterations method: \n";*/
   x0 = a;
   x = phi(x0);
   while (fabs(x - x0) > eps) {
+    printf("%8.3lf %8.3lf\n", x, 0.0);
     x0 = x;
     x = phi(x0);
-  }
+  }/*
   cout << "x0 = " << x << "\n";
   cout << "y(x0) = " << fixed << setprecision(5) << f(x) << "\n";
 
-  cout << "Vegstein method: \n";
+  cout << "Vegstein method: \n";*/
   x0 = a;
   double x1(phi(x0));
   double nx0(x0);
@@ -58,9 +62,9 @@ int main()
     nx0 = x1;
     x1 = x2;
     nx1 = nx2;
-  }
-  cout << "x0 = " << x << "\n";
-  cout << "y(x0) = " << fixed << setprecision(5) << f(x) << "\n";
+  }/*
+  cout << "x0 = " << x1 << "\n";
+  cout << "y(x0) = " << fixed << setprecision(5) << f(x) << "\n";*/
 
   return 0;
 }
